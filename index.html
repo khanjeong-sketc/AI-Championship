@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Championship Season 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>🏆 AI Championship Season 1</span>
+      <span class="collab-x">×</span>
+      <span class="collab-name">IGAWORKS</span>
+    </div>
+    <h1 class="hero-title">오직 아이디어로<br>승부하세요</h1>
+    <p class="hero-subtitle">AI 에이전트 Kiro로 업무를 혁신하거나,<br>새로운 서비스를 만드세요.</p>
+    <a href="https://forms.gle/G7aCKFrRePBrAJr69" target="_blank" class="btn-primary">참가 신청하기 →</a>
+    <div class="hero-countdown">
+      <p class="countdown-label">신청 마감까지</p>
+      <div class="countdown-timer">
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-unit">일</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-unit">시간</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-mins">--</span>
+          <span class="countdown-unit">분</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-secs">--</span>
+          <span class="countdown-unit">초</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-arrow" id="scroll-arrow"><span>↓</span></div>
+  </section>
+
+  <!-- 2. 이런 분에게 추천합니다 -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-label">WHO</div>
+      <h2 class="section-title">이런 분에게 추천합니다</h2>
+      <div class="persona-cards">
+        <div class="persona-card">
+          <div class="persona-emoji">😵‍💫</div>
+          <div class="persona-text">
+            <p class="persona-main">매번 같은 업무 반복에 지친 분</p>
+            <p class="persona-sub">"이거 자동화 안 되나…" 생각해본 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">📊</div>
+          <div class="persona-text">
+            <p class="persona-main">데이터는 많은데 활용은 못 하고 있는 분</p>
+            <p class="persona-sub">엑셀/시트만 계속 보고 있는 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">🤝</div>
+          <div class="persona-text">
+            <p class="persona-main">협업할 때마다 흐름이 끊기는 걸 느끼는 분</p>
+            <p class="persona-sub">전달·정리·공유에 시간 쓰고 있는 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">⏳</div>
+          <div class="persona-text">
+            <p class="persona-main">일은 많은데 시간이 부족하다고 느끼는 분</p>
+            <p class="persona-sub">중요한 일보다 급한 일만 하고 있는 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">🧠</div>
+          <div class="persona-text">
+            <p class="persona-main">업무를 더 똑똑하게 하고 싶은 분</p>
+            <p class="persona-sub">단순 반복보다 구조를 바꾸고 싶은 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">🧪</div>
+          <div class="persona-text">
+            <p class="persona-main">새로운 방식으로 일해보고 싶은 분</p>
+            <p class="persona-sub">기존 방식에 한계를 느끼는 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">🔁</div>
+          <div class="persona-text">
+            <p class="persona-main">비슷한 요청을 계속 반복해서 받고 있는 분</p>
+            <p class="persona-sub">같은 답변을 여러 번 하고 있는 분</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-emoji">🚧</div>
+          <div class="persona-text">
+            <p class="persona-main">업무 중간중간 병목을 느끼는 분</p>
+            <p class="persona-sub">"왜 여기서 막히지?" 고민해본 분</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 시상 & 상금 -->
+  <section class="section section-alt" id="prizes">
+    <div class="container">
+      <div class="section-label">PRIZES</div>
+      <h2 class="section-title">시상 & 상금</h2>
+      <div class="prize-hero" id="prize-section">
+        <span class="prize-prefix">약</span>
+        <span class="prize-amount" id="prize-counter">0</span>
+        <span class="prize-suffix">원</span>
+        <p class="prize-label">총 상금</p>
+      </div>
+      <div class="prize-cards">
+        <div class="prize-card-group">
+          <h3 class="prize-track-title badge-a-text">Track A · 업무 개선</h3>
+          <div class="prize-card gold">
+            <div class="prize-rank">🥇</div>
+            <div class="prize-place">대상</div>
+            <div class="prize-money">100만 원</div>
+          </div>
+          <div class="prize-card silver">
+            <div class="prize-rank">🥈</div>
+            <div class="prize-place">최우수</div>
+            <div class="prize-money">50만 원</div>
+          </div>
+          <div class="prize-card bronze">
+            <div class="prize-rank">🥉</div>
+            <div class="prize-place">우수</div>
+            <div class="prize-money">30만 원</div>
+          </div>
+        </div>
+        <div class="prize-card-group">
+          <h3 class="prize-track-title badge-b-text">Track B · 신규 서비스</h3>
+          <div class="prize-card gold">
+            <div class="prize-rank">🥇</div>
+            <div class="prize-place">대상</div>
+            <div class="prize-money">500만 원</div>
+          </div>
+          <div class="prize-card silver">
+            <div class="prize-rank">🥈</div>
+            <div class="prize-place">최우수</div>
+            <div class="prize-money">200만 원</div>
+          </div>
+          <div class="prize-card bronze">
+            <div class="prize-rank">🥉</div>
+            <div class="prize-place">우수</div>
+            <div class="prize-money">100만 원</div>
+          </div>
+        </div>
+      </div>
+      <div class="prize-extra">
+        <span>🎁 참가자 전원 굿즈 지급</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 참여 트랙 -->
+  <section class="section" id="tracks">
+    <div class="container">
+      <div class="section-label">TRACKS</div>
+      <h2 class="section-title">참여 트랙</h2>
+      <p class="section-desc">2개 트랙 중 1개를 선택하세요<br>(중복 참여 불가)</p>
+      <div class="track-cards">
+        <div class="track-card track-a" data-track="a">
+          <div class="track-badge badge-a">Track A</div>
+          <h3>업무 개선</h3>
+          <p class="track-subtitle">My Work Improvement</p>
+          <div class="track-meta">
+            <span class="track-tag">👤 개인</span>
+            <span class="track-tag">👥 팀</span>
+          </div>
+          <p class="track-desc">현업에서 마주하는 다양한 업무를 Kiro로 자동화하여, 일하는 방식의 질적인 변화를 만드는 것을 목표로 합니다.</p>
+          <div class="track-examples">
+            <h4>구현 예시</h4>
+            <ul>
+              <li>정산 업무 자동화<br>메일 데이터 취합 → 사내 양식 수정 → 결재 자동 처리</li>
+              <li>보고서 생성 효율화<br>지점별 매출 데이터 수집/가공 → 리포트 자동 생성</li>
+              <li>시장 동향 모니터링<br>키워드 기반 뉴스 수집 → 요약 보고서 자동 발송</li>
+            </ul>
+          </div>
+        </div>
+        <div class="track-card track-b" data-track="b">
+          <div class="track-badge badge-b">Track B</div>
+          <h3>신규 서비스 개발</h3>
+          <p class="track-subtitle">New Service Development</p>
+          <div class="track-meta">
+            <span class="track-tag">👤 개인</span>
+            <span class="track-tag">👥 팀</span>
+          </div>
+          <p class="track-desc">IGAW의 제품 경쟁력을 높이거나, 데이터 경쟁력을 높이는 등 상용화 가능성이 있는 아이디어를 MVP 형태로 구현하는 것을 목표로 합니다.</p>
+          <div class="track-examples">
+            <h4>구현 예시</h4>
+            <ul>
+              <li>B2B 솔루션<br>문서 자동 분류·분석으로 리스크를 도출하는 AI 서비스</li>
+              <li>신규 서비스 기능<br>AI 기반 개인화 추천 엔진 또는 맞춤형 데이터 분석 모듈</li>
+              <li>SaaS 아이템<br>소상공인/프리랜서 대상 유료 구독형 AI 툴</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 일정 + 참여 방법 (합침) -->
+  <section class="section section-alt" id="schedule">
+    <div class="container">
+      <div class="section-label">SCHEDULE & HOW TO</div>
+      <h2 class="section-title">일정 & 참여 방법</h2>
+
+      <div class="tl-sequential">
+        <div class="tl-step" data-step="0">
+          <div class="tl-num">01</div>
+          <div class="tl-body">
+            <div class="tl-date">4/08(수) ~ 4/14(화)</div>
+            <h3 class="tl-heading">참가 신청 접수</h3>
+            <p class="tl-desc">신청서를 제출하고 아이디어를 공유하세요</p>
+          </div>
+          <div class="tl-bar"><div class="tl-bar-fill"></div></div>
+        </div>
+        <div class="tl-step" data-step="1">
+          <div class="tl-num">02</div>
+          <div class="tl-body">
+            <div class="tl-date">4/15(수) ~ 4/16(목)</div>
+            <h3 class="tl-heading">기획 피드백 및 수정</h3>
+            <p class="tl-desc">제출된 기획안에 대한 피드백과 보완 요청</p>
+          </div>
+          <div class="tl-bar"><div class="tl-bar-fill"></div></div>
+        </div>
+        <div class="tl-step" data-step="2">
+          <div class="tl-num">03</div>
+          <div class="tl-body">
+            <div class="tl-date">4/20(월)</div>
+            <h3 class="tl-heading">최종 참가자 발표</h3>
+            <p class="tl-desc">최종 30명 확정 및 발표</p>
+          </div>
+          <div class="tl-bar"><div class="tl-bar-fill"></div></div>
+        </div>
+        <div class="tl-step" data-step="3">
+          <div class="tl-num">04</div>
+          <div class="tl-body">
+            <div class="tl-date">4/20(월) ~ 4/30(목)</div>
+            <h3 class="tl-heading">프로젝트 집중 수행</h3>
+            <p class="tl-desc">Kiro와 함께 본격적인 프로젝트 개발</p>
+          </div>
+          <div class="tl-bar"><div class="tl-bar-fill"></div></div>
+        </div>
+        <div class="tl-step" data-step="4">
+          <div class="tl-num">05</div>
+          <div class="tl-body">
+            <div class="tl-date">추후 공지</div>
+            <h3 class="tl-heading">성과 검증 및 시상</h3>
+            <p class="tl-desc">결과 발표 및 시상식</p>
+          </div>
+          <div class="tl-bar"><div class="tl-bar-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="steps-divider"></div>
+
+      <h3 class="sub-section-title">참여 방법</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>참가 신청</h3>
+          <p>트랙을 선택하고 아이디어를 간략히 작성해 신청서를 제출하세요.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>선발 & 피드백</h3>
+          <p>기획안 검토 후 피드백을 드리고, 보완을 거쳐 최종 30명을 선발합니다.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>프로젝트 수행</h3>
+          <p>Kiro + AWS 기술 지원을 받으며 10일간 프로젝트를 완성합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 기술 지원 -->
+  <section class="section" id="support">
+    <div class="container">
+      <div class="section-label">SUPPORT</div>
+      <h2 class="section-title">기술 지원</h2>
+      <p class="section-desc">기술이 부족해도 괜찮습니다. 함께 해결합니다.</p>
+
+      <!-- Kiro 대화 (모든 것이 대화창 안에서) -->
+      <div class="kiro-demo" id="kiro-demo">
+        <div class="chat-header">
+          <span class="chat-avatar">🤖</span>
+          <span class="chat-name">Kiro</span>
+          <span class="chat-status" id="kiro-status">online</span>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+      </div>
+
+      <div class="support-cards">
+        <div class="support-card">
+          <div class="support-icon">🎉</div>
+          <h3>챔피언십 오프닝 데이</h3>
+          <p>4/14(화) 14:00 · 카페웍스<br>AI 에이전트 활용 사례 공유</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">📚</div>
+          <h3>AWS 기술 교육</h3>
+          <p>4/15(수) 14:00 · Zoom<br>Kiro 개념 및 기초 사용법 (비대면)</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">💬</div>
+          <h3>기술 전문가 Q&A</h3>
+          <p>AWS 기술 전문가와의 Q&A 세션 운영</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">💡</div>
+          <h3>슬랙 커뮤니티</h3>
+          <p>AI 관련 슬랙 채널에서<br>실시간 질문 및 정보 공유</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🗄️</div>
+          <h3>데이터 API 제공</h3>
+          <p>모바일인덱스, 트레이딩웍스, 애드팝콘의<br>DB 중 공유 가능한 데이터셋을 API로 제공</p>
+        </div>
+      </div>
+
+      <div class="partners">
+        <p class="partners-label">Backed by</p>
+        <div class="partners-logos">
+          <span class="partner-logo">🤖 Kiro</span>
+          <span class="partner-logo">👥 피플실</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">자주 묻는 질문</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>비개발자도 참여할 수 있나요?</span><span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>네, 물론입니다. 중요한 건 기술이 아니라 아이디어입니다. 기술적 구현이 어려운 경우 AWS 교육과 기술 전문가 Q&A를 통해 지원받을 수 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Kiro가 뭔가요?</span><span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>AWS에서 만든 AI 에이전트 IDE입니다. 자연어로 지시하면 AI가 코드를 작성하고 프로젝트를 완성합니다. 코딩 경험이 없어도 사용할 수 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>팀으로 참여할 수 있나요?</span><span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>두 트랙 모두 개인 또는 팀으로 참여 가능합니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>두 트랙에 모두 참여할 수 있나요?</span><span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>아니요, 중복 참여는 불가합니다. 하나의 트랙을 선택해 집중해주세요.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA (역동적) -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="container cta-content">
+      <p class="cta-eyebrow">신청 마감: 2026.04.14(화) 18:00</p>
+      <h2 class="cta-title">당신의 아이디어,<br>지금 증명하세요</h2>
+      <p class="cta-sub">30명만 선발합니다. 망설이면 기회는 사라집니다.</p>
+      <a href="https://forms.gle/G7aCKFrRePBrAJr69" target="_blank" class="btn-primary btn-large btn-glow">참가 신청하기 →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>주관: 피플실 · 기술 지원: AWS</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
