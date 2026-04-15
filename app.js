@@ -1,5 +1,5 @@
 // === Countdown Timer ===
-var DEADLINE = new Date('2026-04-14T18:00:00+09:00');
+var DEADLINE = new Date('2026-04-15T18:00:00+09:00');
 function updateCountdown() {
   var now = new Date();
   var diff = DEADLINE - now;
